@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="Luxury nail care in a calm and modern studio."
+  >
+
+  <title>Blush & Co. Nail Studio</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg studio-navbar sticky-top">
+  <div class="container">
+
+    <a
+      href="#home"
+      class="navbar-brand studio-logo"
+      aria-label="Blush and Co home"
+    >
+      <span class="logo-name">
+        Blush & Co.
+      </span>
+
+      <span class="logo-subtitle">
+        NAIL STUDIO
+      </span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#studioNavbar"
+      aria-controls="studioNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      id="studioNavbar"
+    >
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#services">
+            Services
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">
+            About
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#reviews">
+            Reviews
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">
+            Contact
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-3">
+          <button
+            type="button"
+            class="btn booking-button"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+          >
+            Book Now
+          </button>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero" id="home">
+  <div class="container-fluid px-0">
+    <div class="row g-0 align-items-stretch">
+
+      <!-- TEXT -->
+      <div class="col-lg-5 hero-text-column">
+        <div class="hero-content">
+
+          <p class="hero-eyebrow">
+            BEAUTY · CARE · CONFIDENCE
+          </p>
+
+          <h1>
+            <span class="hero-title-line">
+              Beautiful Nails.
+            </span>
+
+            <span class="hero-title-line hero-title-second">
+              Confident You.
+            </span>
+          </h1>
+
+          <p class="hero-description">
+            Luxury nail care in a relaxing,
+            modern space. Beautiful results,
+            thoughtful details and time just for you.
+          </p>
+
+          <button
+            type="button"
+            class="btn main-button hero-main-button"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+          >
+            Book Your Appointment
+          </button>
+
+        </div>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="col-lg-7 hero-image-wrapper">
+        <img
+          src="images/nails-hero.png"
+          alt="Elegant blush manicure"
+          class="hero-image"
+        >
+
+        <div class="hero-image-overlay"></div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services-section" id="services">
+  <div class="container">
+
+    <div class="section-heading services-heading">
+      <p class="section-eyebrow">
+        TREAT YOURSELF
+      </p>
+
+      <h2>
+        Our Services
+      </h2>
+
+      <p>
+        Beautiful nails, tailored to you.
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- CLASSIC MANICURE -->
+      <div class="col-6 col-lg-3">
+        <article class="service-item service-one">
+
+          <button
+            class="service-photo"
+            type="button"
+            data-service="Classic Manicure"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+            aria-label="Book Classic Manicure"
+          >
+            <img
+              src="images/classic-manicure.png"
+              alt="Classic nude manicure"
+            >
+          </button>
+
+          <h3>
+            Classic Manicure
+          </h3>
+
+          <p>
+            Shape, cuticle care and a flawless finish.
+          </p>
+
+          <span class="service-price">
+            From £25
+          </span>
+
+        </article>
+      </div>
+
+      <!-- GEL MANICURE -->
+      <div class="col-6 col-lg-3">
+        <article class="service-item service-two">
+
+          <button
+            class="service-photo"
+            type="button"
+            data-service="Gel Manicure"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+            aria-label="Book Gel Manicure"
+          >
+            <img
+              src="images/gel-manicure.png"
+              alt="Glossy gel manicure"
+            >
+          </button>
+
+          <h3>
+            Gel Manicure
+          </h3>
+
+          <p>
+            Long-lasting colour with a glossy finish.
+          </p>
+
+          <span class="service-price">
+            From £35
+          </span>
+
+        </article>
+      </div>
+
+      <!-- NAIL ART -->
+      <div class="col-6 col-lg-3">
+        <article class="service-item service-three">
+
+          <button
+            class="service-photo"
+            type="button"
+            data-service="Nail Art"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+            aria-label="Book Nail Art"
+          >
+            <img
+              src="images/nail-art.png"
+              alt="Elegant nail art"
+            >
+          </button>
+
+          <h3>
+            Nail Art
+          </h3>
+
+          <p>
+            Simple details or something completely unique.
+          </p>
+
+          <span class="service-price">
+            From £5
+          </span>
+
+        </article>
+      </div>
+
+      <!-- NAIL EXTENSIONS -->
+      <div class="col-6 col-lg-3">
+        <article class="service-item service-four">
+
+          <button
+            class="service-photo"
+            type="button"
+            data-service="Nail Extensions"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+            aria-label="Book Nail Extensions"
+          >
+            <img
+              src="images/nail-extensions.png"
+              alt="Elegant nail extensions"
+            >
+          </button>
+
+          <h3>
+            Nail Extensions
+          </h3>
+
+          <p>
+            Elegant length and shape designed for you.
+          </p>
+
+          <span class="service-price">
+            From £45
+          </span>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FEATURE STRIP
+===================================================== -->
+
+<section class="feature-strip scroll-reveal">
+  <div class="container">
+    <div class="row g-0">
+
+      <div class="col-md-4 feature">
+        <i class="bi bi-heart"></i>
+
+        <div>
+          <strong>
+            Personal Service
+          </strong>
+
+          <span>
+            Every appointment is tailored to you.
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-4 feature">
+        <i class="bi bi-stars"></i>
+
+        <div>
+          <strong>
+            Beautiful Results
+          </strong>
+
+          <span>
+            Thoughtful details and a flawless finish.
+          </span>
+        </div>
+      </div>
+
+      <div class="col-md-4 feature">
+        <i class="bi bi-cup-hot"></i>
+
+        <div>
+          <strong>
+            Relax & Unwind
+          </strong>
+
+          <span>
+            Your appointment is your time to switch off.
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- LEFT -->
+      <div class="col-lg-6">
+        <div class="about-visual scroll-reveal-left">
+
+          <div class="about-circle">
+            <i class="bi bi-flower1"></i>
+          </div>
+
+          <div class="about-card">
+            <span>
+              YOUR TIME
+            </span>
+
+            <strong>
+              Relax.
+              <br>
+              Refresh.
+              <br>
+              Feel Beautiful.
+            </strong>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="col-lg-6">
+        <div class="about-content scroll-reveal-right">
+
+          <p class="section-eyebrow">
+            ABOUT BLUSH & CO.
+          </p>
+
+          <h2>
+            More Than Just a Manicure.
+          </h2>
+
+          <p>
+            Blush & Co. is a calm, welcoming nail studio
+            created for beautiful nails and a little time
+            away from everything else.
+          </p>
+
+          <p>
+            From natural manicures to statement nail art,
+            every appointment is designed around your style.
+          </p>
+
+          <div class="about-list">
+            <div>
+              <i class="bi bi-check-circle"></i>
+              Carefully selected products
+            </div>
+
+            <div>
+              <i class="bi bi-check-circle"></i>
+              Personalised nail designs
+            </div>
+
+            <div>
+              <i class="bi bi-check-circle"></i>
+              Calm, comfortable studio
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn main-button regular-button mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#bookingModal"
+          >
+            Book Your Visit
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     REVIEWS
+===================================================== -->
+
+<section class="reviews-section" id="reviews">
+  <div class="container">
+
+    <div class="section-heading scroll-reveal">
+
+      <p class="section-eyebrow">
+        PORTFOLIO DEMO
+      </p>
+
+      <h2>
+        Example Reviews
+      </h2>
+
+      <p>
+        These reviews and client names are fictional examples
+        created to demonstrate the website design.
+        They are not reviews from real customers.
+      </p>
+
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <article class="review-card scroll-reveal">
+
+          <div class="review-stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Such a beautiful, relaxing experience.
+            My nails looked perfect.”
+          </p>
+
+          <span>
+            — Sophie M.
+          </span>
+
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="review-card scroll-reveal">
+
+          <div class="review-stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “I loved everything from the studio
+            to the attention to detail.”
+          </p>
+
+          <span>
+            — Emily R.
+          </span>
+
+        </article>
+      </div>
+
+      <div class="col-md-4">
+        <article class="review-card scroll-reveal">
+
+          <div class="review-stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “My gel manicure lasted beautifully.
+            Already booked my next appointment.”
+          </p>
+
+          <span>
+            — Charlotte T.
+          </span>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="contact-box scroll-reveal">
+
+      <div>
+        <p class="section-eyebrow">
+          READY FOR FRESH NAILS?
+        </p>
+
+        <h2>
+          Your Next Manicure Awaits.
+        </h2>
+
+        <p>
+          Choose your treatment and request your appointment.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="btn light-button"
+        data-bs-toggle="modal"
+        data-bs-target="#bookingModal"
+      >
+        Book an Appointment
+        <i class="bi bi-arrow-right ms-2"></i>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="row align-items-center gy-3">
+
+      <div class="col-md-6">
+        <a href="#home" class="footer-logo">
+          Blush & Co.
+          <span>
+            NAIL STUDIO
+          </span>
+        </a>
+      </div>
+
+      <div class="col-md-6 text-md-end">
+        <p>
+          ©
+          <span id="currentYear"></span>
+          Blush & Co. Nail Studio
+        </p>
+
+        <a
+          href="login.php"
+          class="small text-decoration-underline"
+          style="color: inherit;"
+        >
+          Staff login
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================
+     BOOKING MODAL
+===================================================== -->
+
+<div
+  class="modal fade"
+  id="bookingModal"
+  tabindex="-1"
+  aria-labelledby="bookingModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content booking-modal">
+
+      <div class="modal-header">
+        <div>
+          <p class="modal-eyebrow">
+            YOUR APPOINTMENT
+          </p>
+
+          <h2
+            class="modal-title"
+            id="bookingModalLabel"
+          >
+            Book Your Visit
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+
+        <p class="modal-intro">
+          Tell us what you'd like and we'll get
+          back to you to confirm your appointment.
+        </p>
+
+        <!-- BOOKING FORM -->
+        <form
+          id="bookingForm"
+          class="needs-validation"
+          novalidate
+        >
+          <div class="row g-3">
+
+            <!-- NAME -->
+            <div class="col-md-6">
+              <label
+                for="clientName"
+                class="form-label"
+              >
+                Your Name
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="clientName"
+                name="name"
+                minlength="2"
+                autocomplete="name"
+                required
+              >
+
+              <div class="invalid-feedback">
+                Please enter your name.
+              </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="col-md-6">
+              <label
+                for="clientEmail"
+                class="form-label"
+              >
+                Email
+              </label>
+
+              <input
+                type="email"
+                class="form-control"
+                id="clientEmail"
+                name="email"
+                autocomplete="email"
+                placeholder="name@example.com"
+                required
+              >
+
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="col-md-6">
+              <label
+                for="clientPhone"
+                class="form-label"
+              >
+                Phone
+              </label>
+
+              <input
+                type="tel"
+                class="form-control"
+                id="clientPhone"
+                name="phone"
+                autocomplete="tel"
+                inputmode="tel"
+                placeholder="07700 900123"
+                required
+              >
+
+              <div class="invalid-feedback">
+                Please enter a valid UK phone number.
+              </div>
+            </div>
+
+            <!-- TREATMENT -->
+            <div class="col-md-6">
+              <label
+                for="treatmentSelect"
+                class="form-label"
+              >
+                Treatment
+              </label>
+
+              <select
+                class="form-select"
+                id="treatmentSelect"
+                name="treatment"
+                required
+              >
+                <option value="">
+                  Choose a treatment
+                </option>
+
+                <option value="Classic Manicure">
+                  Classic Manicure
+                </option>
+
+                <option value="Gel Manicure">
+                  Gel Manicure
+                </option>
+
+                <option value="Nail Art">
+                  Nail Art
+                </option>
+
+                <option value="Nail Extensions">
+                  Nail Extensions
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+              </select>
+
+              <div class="invalid-feedback">
+                Please choose a treatment.
+              </div>
+            </div>
+
+            <!-- DATE -->
+            <div class="col-md-6">
+              <label
+                for="appointmentDate"
+                class="form-label"
+              >
+                Preferred Date
+              </label>
+
+              <input
+                type="date"
+                class="form-control"
+                id="appointmentDate"
+                name="date"
+                required
+              >
+
+              <div class="invalid-feedback">
+                Please choose a date.
+              </div>
+            </div>
+
+            <!-- TIME -->
+            <div class="col-md-6">
+              <label
+                for="appointmentTime"
+                class="form-label"
+              >
+                Preferred Time
+              </label>
+
+              <select
+                class="form-select"
+                id="appointmentTime"
+                name="time"
+                required
+              >
+                <option value="">
+                  Choose a time
+                </option>
+
+                <option value="Morning">
+                  Morning
+                </option>
+
+                <option value="Afternoon">
+                  Afternoon
+                </option>
+
+                <option value="Evening">
+                  Evening
+                </option>
+              </select>
+
+              <div class="invalid-feedback">
+                Please choose a preferred time.
+              </div>
+            </div>
+
+            <!-- MESSAGE -->
+            <div class="col-12">
+              <label
+                for="bookingMessage"
+                class="form-label"
+              >
+                Anything we should know?
+              </label>
+
+              <textarea
+                class="form-control"
+                id="bookingMessage"
+                name="message"
+                rows="3"
+                placeholder="Colour, nail art ideas, removal needed..."
+              ></textarea>
+            </div>
+
+            <!-- SUBMIT -->
+            <div class="col-12">
+              <button
+                type="submit"
+                class="btn modal-submit-button"
+              >
+                Request Appointment
+                <i class="bi bi-arrow-right ms-2"></i>
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+        <!-- SUCCESS: outside the form -->
+        <div
+          class="d-none"
+          id="bookingSuccess"
+          role="status"
+          aria-live="polite"
+        >
+          <div class="success-message">
+            <i class="bi bi-check-circle"></i>
+
+            <div>
+              <strong>
+                Appointment request received.
+              </strong>
+
+              <p>
+                Your request has been saved.
+                We will contact you to confirm it.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================
+     BOOTSTRAP
+===================================================== -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- =====================================================
+     CUSTOM JS
+===================================================== -->
+
+<script src="js/script.js"></script>
+
+<!-- =====================================================
+     OUR SERVICES: SEPARATE SCROLL TRIGGER
+===================================================== -->
+
+<script>
+  const servicesSection =
+    document.getElementById("services");
+
+  if (
+    servicesSection &&
+    "IntersectionObserver" in window
+  ) {
+    const servicesObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              "services-animate"
+            );
+
+            servicesObserver.unobserve(
+              entry.target
+            );
+          }
+        });
+      },
+      {
+        threshold: 0.20,
+        rootMargin: "0px 0px -8% 0px"
+      }
+    );
+
+    servicesObserver.observe(servicesSection);
+  } else if (servicesSection) {
+    servicesSection.classList.add(
+      "services-animate"
+    );
+  }
+</script>
+
+</body>
+</html>
