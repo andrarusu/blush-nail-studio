@@ -212,6 +212,38 @@ document.addEventListener(
                 "bookingSuccess"
             );
 
+        const demoNotice =
+            document.getElementById(
+                "demoNotice"
+            );
+
+        const staffLoginLink =
+            document.getElementById(
+                "staffLoginLink"
+            );
+
+        const isGitHubPages =
+            window.location.hostname === "andrarusu.github.io" ||
+            window.location.hostname.endsWith(".github.io");
+
+
+        if (isGitHubPages) {
+
+            if (demoNotice) {
+                demoNotice.classList.remove("d-none");
+            }
+
+            if (staffLoginLink) {
+                staffLoginLink.href =
+                    "https://github.com/andrarusu/blush-nail-studio/blob/main/login.php";
+
+                staffLoginLink.target = "_blank";
+                staffLoginLink.rel = "noopener noreferrer";
+                staffLoginLink.textContent = "View staff login code";
+            }
+
+        }
+
 
 
         /* =====================================================
@@ -408,86 +440,241 @@ document.addEventListener(
            FORM SUBMIT
         ===================================================== */
 
-if (bookingForm) {
-    bookingForm.addEventListener("submit", async function (event) {
-        event.preventDefault();
+        if (bookingForm) {
 
-        validatePhone();
+            bookingForm.addEventListener(
+                "submit",
+                async function (event) {
 
-        if (!bookingForm.checkValidity()) {
-            bookingForm.classList.add("was-validated");
+                    event.preventDefault();
 
-            const firstInvalid = bookingForm.querySelector(":invalid");
+                    validatePhone();
 
-            if (firstInvalid) {
-                firstInvalid.focus();
-            }
+                    if (!bookingForm.checkValidity()) {
 
-            return;
-        }
+                        bookingForm.classList.add(
+                            "was-validated"
+                        );
 
-        bookingForm.classList.add("was-validated");
+                        const firstInvalid =
+                            bookingForm.querySelector(
+                                ":invalid"
+                            );
 
-        const submitButton = bookingForm.querySelector('button[type="submit"]');
+                        if (firstInvalid) {
+                            firstInvalid.focus();
+                        }
 
-        if (submitButton) {
-            submitButton.disabled = true;
-        }
+                        return;
+                    }
 
-        try {
-            // Trimitem câmpurile existente către PHP.
-            const response = await fetch("submit_booking.php", {
-                method: "POST",
-                body: new FormData(bookingForm)
-            });
 
-            if (!response.headers.get("content-type")?.includes("application/json")) {
-                throw new Error(
-                    "PHP did not return JSON. Check that submit_booking.php is next to index.html."
-                );
-            }
+                    bookingForm.classList.add(
+                        "was-validated"
+                    );
 
-            const result = await response.json();
 
-            if (!response.ok || result.success !== true) {
-                throw new Error(
-                    result.message || "The appointment request could not be saved."
-                );
-            }
+                    const submitButton =
+                        bookingForm.querySelector(
+                            'button[type="submit"]'
+                        );
 
-            // Arătăm succesul NUMAI după confirmarea salvării în MySQL.
-            if (bookingSuccess) {
-                const heading = bookingSuccess.querySelector("strong");
-                const description = bookingSuccess.querySelector("p");
 
-                if (heading) {
-                    heading.textContent = "Appointment request received.";
+                    if (submitButton) {
+                        submitButton.disabled = true;
+                    }
+
+
+                    /*
+                     * GitHub Pages is static and cannot run PHP.
+                     * On the public portfolio demo we therefore
+                     * simulate a successful form flow without
+                     * sending or storing any visitor data.
+                     */
+                    if (isGitHubPages) {
+
+                        if (bookingSuccess) {
+
+                            const heading =
+                                bookingSuccess.querySelector(
+                                    "strong"
+                                );
+
+                            const description =
+                                bookingSuccess.querySelector(
+                                    "p"
+                                );
+
+
+                            if (heading) {
+                                heading.textContent =
+                                    "Demo request completed.";
+                            }
+
+
+                            if (description) {
+                                description.textContent =
+                                    "No appointment was submitted or stored. This preview demonstrates the form and client-side validation.";
+                            }
+
+
+                            bookingForm.insertAdjacentElement(
+                                "afterend",
+                                bookingSuccess
+                            );
+
+                            bookingSuccess.classList.remove(
+                                "d-none"
+                            );
+
+                            bookingForm.classList.add(
+                                "d-none"
+                            );
+
+                            bookingModal
+                                ?.querySelector(
+                                    ".modal-intro"
+                                )
+                                ?.classList.add(
+                                    "d-none"
+                                );
+
+                            demoNotice
+                                ?.classList.add(
+                                    "d-none"
+                                );
+                        }
+
+
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                        }
+
+                        return;
+                    }
+
+
+                    /*
+                     * Local / PHP hosting mode:
+                     * keep the real backend submission.
+                     */
+                    try {
+
+                        const response =
+                            await fetch(
+                                "submit_booking.php",
+                                {
+                                    method: "POST",
+                                    body: new FormData(
+                                        bookingForm
+                                    )
+                                }
+                            );
+
+
+                        if (
+                            !response.headers
+                                .get("content-type")
+                                ?.includes(
+                                    "application/json"
+                                )
+                        ) {
+
+                            throw new Error(
+                                "PHP did not return JSON. Check that submit_booking.php is next to index.html."
+                            );
+                        }
+
+
+                        const result =
+                            await response.json();
+
+
+                        if (
+                            !response.ok ||
+                            result.success !== true
+                        ) {
+
+                            throw new Error(
+                                result.message ||
+                                "The appointment request could not be saved."
+                            );
+                        }
+
+
+                        if (bookingSuccess) {
+
+                            const heading =
+                                bookingSuccess.querySelector(
+                                    "strong"
+                                );
+
+                            const description =
+                                bookingSuccess.querySelector(
+                                    "p"
+                                );
+
+
+                            if (heading) {
+                                heading.textContent =
+                                    "Appointment request received.";
+                            }
+
+
+                            if (description) {
+                                description.textContent =
+                                    "Your request has been saved. We will contact you to confirm it.";
+                            }
+
+
+                            bookingForm.insertAdjacentElement(
+                                "afterend",
+                                bookingSuccess
+                            );
+
+                            bookingSuccess.classList.remove(
+                                "d-none"
+                            );
+
+                            bookingForm.classList.add(
+                                "d-none"
+                            );
+
+                            bookingModal
+                                ?.querySelector(
+                                    ".modal-intro"
+                                )
+                                ?.classList.add(
+                                    "d-none"
+                                );
+                        }
+
+                    }
+
+                    catch (error) {
+
+                        alert(
+                            "The request was not saved. " +
+                            (
+                                error.message ||
+                                "Please try again."
+                            )
+                        );
+
+                    }
+
+                    finally {
+
+                        if (submitButton) {
+                            submitButton.disabled = false;
+                        }
+
+                    }
+
                 }
-
-                if (description) {
-                    description.textContent =
-                        "Your request has been saved. We will contact you to confirm it.";
-                }
-
-                bookingForm.insertAdjacentElement("afterend", bookingSuccess);
-                bookingSuccess.classList.remove("d-none");
-                bookingForm.classList.add("d-none");
-                bookingModal?.querySelector(".modal-intro")?.classList.add("d-none");
-            }
-
-        } catch (error) {
-            alert(
-                "The request was not saved. " +
-                (error.message || "Please try again.")
             );
 
-        } finally {
-            if (submitButton) {
-                submitButton.disabled = false;
-            }
         }
-    });
-}
 
 
 
@@ -507,7 +694,9 @@ if (bookingForm) {
 
                     bookingForm.reset();
                     bookingForm.classList.remove("d-none");
-                        bookingModal?.querySelector(".modal-intro")?.classList.remove("d-none");
+                    bookingModal
+                        ?.querySelector(".modal-intro")
+                        ?.classList.remove("d-none");
 
 
                     bookingForm.classList.remove(
@@ -527,6 +716,18 @@ if (bookingForm) {
                     if (bookingSuccess) {
 
                         bookingSuccess.classList.add(
+                            "d-none"
+                        );
+
+                    }
+
+
+                    if (
+                        isGitHubPages &&
+                        demoNotice
+                    ) {
+
+                        demoNotice.classList.remove(
                             "d-none"
                         );
 
