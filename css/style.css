@@ -2230,6 +2230,42 @@ button {
 
 
 
+
+
+/* ==================================================
+   PORTFOLIO DEMO NOTICE
+================================================== */
+
+.demo-notice {
+    margin-bottom: 20px;
+    padding: 12px 14px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #72584f;
+    background: #fff7f3;
+
+    border:
+        1px
+        solid
+        #edd6ce;
+
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.demo-notice i {
+    margin-top: 1px;
+    flex-shrink: 0;
+
+    color:
+        var(--blush-dark);
+
+    font-size: 15px;
+}
+
 /* ==================================================
    GENERAL SCROLL REVEALS
 ================================================== */
